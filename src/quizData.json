@@ -1,0 +1,57 @@
+{
+  "origins": [
+    {
+      "id": 1,
+      "question": "What island is considered the Principle Island of the Ryukyu Archipelago?",
+      "options": ["Japan", "Okinawa", "China", "India"],
+      "correctAnswer": "Okinawa",
+      "selectedAnswer": null
+    },
+    {
+      "id": 2,
+      "question": "Who is believed to have brought Chuan-Fa to the Shaolin temple in China during the Sung Dynasty?",
+      "options": ["Gichin Funakoshi", "Bodhidharma", "Sakugawa Shungo", "King Satto"],
+      "correctAnswer": "Bodhidharma",
+      "selectedAnswer": null
+    },
+    {
+      "id": 3,
+      "question": "What event in 1609 led to the development of a fighting method known as 'Te' (hand)?",
+      "options": [
+        "Japanese Satsuma Clan's march on the Ryukyu Islands",
+        "Declaration of allegiance by King Satto",
+        "Ban on all weaponry",
+        "Development of Chuan-Fa in Okinawa"
+      ],
+      "correctAnswer": "Japanese Satsuma Clan's march on the Ryukyu Islands",
+      "selectedAnswer": null
+    },
+    {
+      "id": 4,
+      "question": "Who is commonly known as the father of modern-day karate?",
+      "options": ["Bodhidharma", "King Satto", "Gichin Funakoshi", "Sakugawa Shungo"],
+      "correctAnswer": "Gichin Funakoshi",
+      "selectedAnswer": null
+    },
+    {
+      "id": 5,
+      "question": "Which virtue of Bushido emphasizes the importance of treating others with courtesy and consideration?",
+      "options": [
+        "Righteousness (義 gi)",
+        "Loyalty (忠義 chūgi)",
+        "Respect (礼儀 reigi)",
+        "Courage (勇気 yūki)"
+      ],
+      "correctAnswer": "Respect (礼儀 reigi)",
+      "selectedAnswer": null
+    }
+  ],
+  "yellowBelt": [
+    {
+      "question": "What is the capital of France?",
+      "options": ["Paris", "London", "Berlin", "Rome"],
+      "correctAnswer": "Paris",
+      "selectedAnswer": null
+    }
+  ]
+}

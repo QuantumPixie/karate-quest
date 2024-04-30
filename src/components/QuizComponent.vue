@@ -82,7 +82,6 @@ const resetQuiz = (): void => {
       </div>
     </div>
     <div v-if="quizCompleted">
-      quiz complete: {{ console.log(score === totalQuestions) }}
       <div v-if="score === totalQuestions">
         <p>
           Congratulations! <br />

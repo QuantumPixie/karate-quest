@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, defineProps, ref, watch } from 'vue'
+import { RouterLink } from 'vue-router'
 
 interface Question {
   id: number
@@ -81,11 +82,13 @@ const resetQuiz = (): void => {
       </div>
     </div>
     <div v-if="quizCompleted">
+      quiz complete: {{ console.log(score === totalQuestions) }}
       <div v-if="score === totalQuestions">
         <p>
           Congratulations! <br />
           You've answered all questions correctly. <br />
           Mark this section as complete and unlock your next challenge here:
+          <router-link class="button" to="/fundamentals">Go to Fundamentals Page</router-link>
         </p>
       </div>
       <div v-else>

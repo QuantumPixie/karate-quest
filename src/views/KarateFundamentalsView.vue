@@ -16,11 +16,14 @@ import IntroductionSection from './IntroductionSection.vue'
     </p>
 
     <p>
+      In this dojo of digital enlightenment, you will learn not only the physical techniques of
+      karate but also the virtues that underpin its practice.
+    </p>
+    <p>
       <b
-        >Picture this: you, a mighty warrior in training, standing amidst the swirling mists of the
-        bamboo forest, ready to unleash your inner dragon and unleash a can of whoop-ass on anyone
-        who dares to challenge you. But fear not, my apprentice, for I am here to guide you on your
-        quest for martial arts mastery.</b
+        >Each section of your journey will unlock new knowledge and skills, but heed this wisdom: to
+        progress to the next challenge, you must first conquer the quiz at the end of each
+        section.</b
       >
     </p>
 
@@ -31,9 +34,7 @@ import IntroductionSection from './IntroductionSection.vue'
     </p>
     <p>
       So, grab your gi, tie on your belt, and
-      <b>prepare to unleash your inner karate kid.</b> The path ahead may be long and treacherous,
-      but with patience, perseverance, and a healthy dose of humor, you shall become a karate master
-      worthy of legend. Let the training begin! Hi-yah!
+      <b>prepare to unleash your inner karate kid!</b>
     </p>
     <IntroductionSection />
   </main>
@@ -88,7 +89,8 @@ img {
 p {
   font-size: 18px;
   color: #666;
-  text-align: justify;
+  text-align: left;
   margin-top: 1rem;
+  line-height: 1.7rem;
 }
 </style>

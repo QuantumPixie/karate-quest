@@ -46,11 +46,60 @@
       "selectedAnswer": null
     }
   ],
-  "yellowBelt": [
+  "elements": [
     {
-      "question": "What is the capital of France?",
-      "options": ["Paris", "London", "Berlin", "Rome"],
-      "correctAnswer": "Paris",
+      "id": 6,
+      "question": "What are the three basic Elements of good Karate?",
+      "options": [
+        "Ki, Ka, Ku",
+        "Kata, Kihon, Kumite",
+        "Stance, Strike, Kick",
+        "Punch, Block, Spar"
+      ],
+      "correctAnswer": "Kata, Kihon, Kumite",
+      "selectedAnswer": null
+    },
+    {
+      "id": 7,
+      "question": "Which Element of Karate is often considered the Spirit of Karate?",
+      "options": ["Kihon", "Kata", "Kumite", "None of the above"],
+      "correctAnswer": "Kumite",
+      "selectedAnswer": null
+    },
+    {
+      "id": 8,
+      "question": "What is the purpose of practicing Kihon in Karate training?",
+      "options": [
+        "To simulate fights against imaginary opponents",
+        "To develop strategy and mental fortitude",
+        "To establish a solid foundation and proper technique",
+        "To refine form and technique"
+      ],
+      "correctAnswer": "To establish a solid foundation and proper technique",
+      "selectedAnswer": null
+    },
+    {
+      "id": 9,
+      "question": "What are Kata in the context of Karate?",
+      "options": [
+        "Basic techniques and principles",
+        "Prearranged sequences of movements and techniques",
+        "Controlled and supervised combat between two practitioners",
+        "None of the above"
+      ],
+      "correctAnswer": "Prearranged sequences of movements and techniques",
+      "selectedAnswer": null
+    },
+    {
+      "id": 10,
+      "question": "Which of the following is true about Kumite in Karate",
+      "options": [
+        "It is often performed in a specific pattern",
+        "It emphasizes preserving traditional techniques",
+        "It involves controlled and supervised combat between two practitioners",
+        "It is primarily focused on refining form and technique"
+      ],
+      "correctAnswer": "It involves controlled and supervised combat between two practitioners",
       "selectedAnswer": null
     }
   ]

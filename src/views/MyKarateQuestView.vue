@@ -3,14 +3,6 @@ import { ref, watch } from 'vue'
 import type { Ref } from 'vue'
 import { useCompletedSectionsStore } from '@/stores/CompletedSectionsStore'
 
-interface Sections {
-  // Define the structure of the sections data
-  // For example:
-  name: string
-  displayName: string
-  description: string
-}
-
 const completedSectionsStore = useCompletedSectionsStore()
 const completedSections = completedSectionsStore.completedSections
 
@@ -26,7 +18,7 @@ const progressPercentage: Ref<number> = ref<number>(
 )
 
 // Watch for changes in completedSections and recalculate progress
-watch(completedSections, (newCompletedSections: Sections[]) => {
+watch(completedSections, (newCompletedSections: string[]) => {
   completedSectionsCount.value = newCompletedSections.length
   progressPercentage.value =
     totalSections.value === 0 ? 0 : (completedSectionsCount.value / totalSections.value) * 100
@@ -68,7 +60,7 @@ h2 {
 }
 .completed-section {
   display: flex;
-  align-items: flex-start; /* Change to flex-start for lower alignment */
+  align-items: flex-start;
   margin: 1rem;
   color: #666;
   font-size: bolder;
@@ -110,8 +102,8 @@ ul {
   width: 100%;
   height: 100%;
   border-radius: 15px;
-  border: 2px solid black; /* Adjust border properties as needed */
-  box-sizing: border-box; /* Ensure the border is included in the width */
+  border: 2px solid black;
+  box-sizing: border-box;
 }
 
 .progress {

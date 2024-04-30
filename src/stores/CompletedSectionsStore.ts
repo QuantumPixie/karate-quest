@@ -4,6 +4,7 @@ import type { Ref } from 'vue'
 
 interface CompletedSectionsStore {
   completedSections: Ref<string[]>
+  addCompletedSection: (sectionName: string) => void
 }
 
 export const useCompletedSectionsStore = defineStore('completedSections', () => {
@@ -20,9 +21,7 @@ export const useCompletedSectionsStore = defineStore('completedSections', () => 
     console.log('Updated completed sections stored in local storage:', newValue)
   })
 
-  // Function to add a completed section
   function addCompletedSection(sectionName: string) {
-    console.log('>>>> section name', sectionName)
     // Ensure completedSections is always treated as an array
     completedSections.value = [...completedSections.value, sectionName]
   }

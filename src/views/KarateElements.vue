@@ -1,6 +1,28 @@
+<script setup lang="ts">
+import QuizComponent from '@/components/QuizComponent.vue'
+import quizData from '@/quizData.json'
+
+interface QuizQuestion {
+  id: number
+  question: string
+  options: string[]
+  correctAnswer: string
+  selectedAnswer: string | null
+}
+
+interface QuizData {
+  elements: QuizQuestion[]
+}
+
+const typedQuizData = quizData as QuizData
+</script>
+
 <template>
   <main class="elements">
-    <h1>Elements of Karate</h1>
+    <div class="header">
+      <h1>Elements of Karate</h1>
+      <img src="@/assets/symbols_2373258 (1).png" alt="Symbol" class="icon" />
+    </div>
     <p>
       There are 3 basic Elements to good Karate; <b>Kihon</b> (basic techniques),
       <b>Kata</b> (training exercises with predetermined moves), and <b>Kumite</b> (sparring). These
@@ -79,12 +101,27 @@
         fortitude, complementing the technical aspects learned in kihon and kata.
       </li>
     </ul>
+    <QuizComponent :questions="typedQuizData.elements" />
   </main>
 </template>
 <style scoped>
 .elements {
   padding: 4rem;
   max-width: 71%;
+}
+.header {
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.icon {
+  width: 60px;
+  height: 60px;
+}
+img {
+  margin-left: 1rem;
 }
 h2 {
   margin-top: 2rem;

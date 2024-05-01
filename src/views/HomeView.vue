@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import type { Ref } from 'vue'
 import image1 from '@/assets/leslie-jones-urBiLDuUhMU-unsplash.jpeg'
 import image2 from '@/assets/thao-lee-1IPV7Slrz7w-unsplash.jpeg'
 import image3 from '@/assets/thao-lee-dBAPRX9RdhQ-unsplash.jpeg'
@@ -8,9 +10,13 @@ import image6 from '@/assets/thao-lee-P033elIfs2M-unsplash.jpeg'
 import image7 from '@/assets/thao-lee-pFhIoamEens-unsplash.jpeg'
 import image8 from '@/assets/thao-lee-w29-TNxFaGg-unsplash.jpeg'
 import image9 from '@/assets/thao-lee-Xl-ilWBKJNk-unsplash.jpeg'
-import { ref } from 'vue'
 
-const images = ref([
+interface Image {
+  src: string
+  alt: string
+}
+
+const images: Ref<Image[]> = ref([
   { src: image1, alt: 'Image 1' },
   { src: image2, alt: 'Image 2' },
   { src: image3, alt: 'Image 3' },
@@ -18,17 +24,17 @@ const images = ref([
   { src: image5, alt: 'Image 5' },
   { src: image6, alt: 'Image 6' },
   { src: image7, alt: 'Image 7' },
-  { src: image8, alt: 'Image 7' },
-  { src: image9, alt: 'Image 7' }
+  { src: image8, alt: 'Image 8' },
+  { src: image9, alt: 'Image 9' }
 ])
 
-const currentIndex = ref(0)
+const currentIndex: Ref<number> = ref(0)
 
-function nextSlide() {
+function nextSlide(): void {
   currentIndex.value = (currentIndex.value + 1) % images.value.length
 }
 
-function prevSlide() {
+function prevSlide(): void {
   currentIndex.value = (currentIndex.value - 1 + images.value.length) % images.value.length
 }
 </script>

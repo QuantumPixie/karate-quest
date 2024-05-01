@@ -22,7 +22,10 @@ const videoUrl = computed<string>(() => `https://www.youtube.com/embed/${videoId
 </script>
 <template>
   <main class="origins">
-    <h2>Karate Origins</h2>
+    <div class="header">
+      <h2>Karate Origins</h2>
+      <img src="@/assets/my-location_7837695.png" alt="Location" class="icon" />
+    </div>
     <p>
       Karate is a martial art developed in Japan from a system used on the island of Okinawa.
       Okinawa is the Principle Island of the Ryukyu Archipelago, laying three hundred miles to the

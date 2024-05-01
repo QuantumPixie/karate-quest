@@ -171,6 +171,11 @@ ul {
   font-size: 16px;
   padding: 10px 20px;
 }
+@media screen and (max-width: 768px) {
+  .submit-button {
+    margin-left: 4.3rem;
+  }
+}
 </style>
 
 <!-- TODO:

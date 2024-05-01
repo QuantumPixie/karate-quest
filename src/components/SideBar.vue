@@ -162,9 +162,5 @@ aside {
       }
     }
   }
-
-  @media (max-width: 768px) {
-    //  for future styles
-  }
 }
 </style>

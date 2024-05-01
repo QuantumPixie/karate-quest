@@ -246,4 +246,33 @@ li {
   margin: 1rem;
   color: #666;
 }
+
+@media screen and (max-width: 768px) {
+  .origins {
+    padding: 1rem;
+    max-width: 85%; /* Adjusted max-width for mobile view */
+  }
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  p {
+    margin-top: 2rem;
+    text-align: left;
+  }
+  .submit-button {
+    margin-left: 4rem;
+  }
+}
 </style>

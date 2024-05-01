@@ -67,7 +67,7 @@ import IntroductionSection from './IntroductionSection.vue'
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: inherit;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-bottom: 2rem;
   padding: 20px;
   text-decoration: none;
@@ -92,5 +92,37 @@ p {
   text-align: left;
   margin-top: 1rem;
   line-height: 1.7rem;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .fundamentals-page {
+    padding: 1rem;
+    max-width: 85%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icon {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    text-align: left;
+  }
+  .card {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .complete-button {
+    position: absolute;
+    margin-left: 5rem;
+    margin-bottom: 0.5rem;
+  }
 }
 </style>

@@ -1,8 +1,43 @@
+<script setup lang="ts">
+import image1 from '@/assets/leslie-jones-urBiLDuUhMU-unsplash.jpeg'
+import image2 from '@/assets/thao-lee-1IPV7Slrz7w-unsplash.jpeg'
+import image3 from '@/assets/thao-lee-dBAPRX9RdhQ-unsplash.jpeg'
+import image4 from '@/assets/thao-lee-HHechVrIhf8-unsplash.jpeg'
+import image5 from '@/assets/thao-lee-igLzPKOvZNw-unsplash.jpeg'
+import image6 from '@/assets/thao-lee-P033elIfs2M-unsplash.jpeg'
+import image7 from '@/assets/thao-lee-pFhIoamEens-unsplash.jpeg'
+import image8 from '@/assets/thao-lee-w29-TNxFaGg-unsplash.jpeg'
+import image9 from '@/assets/thao-lee-Xl-ilWBKJNk-unsplash.jpeg'
+import { ref } from 'vue'
+
+const images = ref([
+  { src: image1, alt: 'Image 1' },
+  { src: image2, alt: 'Image 2' },
+  { src: image3, alt: 'Image 3' },
+  { src: image4, alt: 'Image 4' },
+  { src: image5, alt: 'Image 5' },
+  { src: image6, alt: 'Image 6' },
+  { src: image7, alt: 'Image 7' },
+  { src: image8, alt: 'Image 7' },
+  { src: image9, alt: 'Image 7' }
+])
+
+const currentIndex = ref(0)
+
+function nextSlide() {
+  currentIndex.value = (currentIndex.value + 1) % images.value.length
+}
+
+function prevSlide() {
+  currentIndex.value = (currentIndex.value - 1 + images.value.length) % images.value.length
+}
+</script>
+
 <template>
   <main class="home-page">
     <div class="header">
-      <img src="@/assets/75_12508649.png" alt="Karate Icon" class="icon" />
       <h1>Welcome to KarateQuest: Path to Mastery</h1>
+      <img src="@/assets/75_12508649.png" alt="Karate Icon" class="icon" />
     </div>
     <p class="intro">
       Ah, young grasshopper, behold the wonders of the dojo in the digital realm! <br />
@@ -35,6 +70,19 @@
         as a showdown between rival dojos. Hi-yah!</b
       >
     </p>
+    <div class="slideshow-container">
+      <div
+        v-for="(image, index) in images"
+        :key="index"
+        class="slide"
+        v-show="index === currentIndex"
+      >
+        <img :src="image.src" :alt="image.alt" style="width: 100%" />
+      </div>
+
+      <a class="prev" @click="prevSlide">&#10094;</a>
+      <a class="next" @click="nextSlide">&#10095;</a>
+    </div>
   </main>
 </template>
 <style>
@@ -80,5 +128,76 @@ p {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.slideshow-container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 2rem;
+}
+.slideshow-container .slide {
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .home-page {
+    padding: 1rem;
+    max-width: 85%;
+  }
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icon {
+    margin-top: 1rem;
+  }
+
+  .slideshow-container {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  p {
+    text-align: left;
+  }
 }
 </style>

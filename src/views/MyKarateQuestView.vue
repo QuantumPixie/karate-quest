@@ -120,4 +120,55 @@ ul {
   color: black;
   font-weight: bold;
 }
+@media screen and (max-width: 768px) {
+  .my-quest {
+    padding: 1rem;
+    max-width: 85%;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    font-size: 24px;
+  }
+
+  .completed-section {
+    margin: 0.5rem;
+  }
+
+  .star-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.3rem;
+    margin-top: 0.5rem;
+  }
+
+  .section-name {
+    font-size: 1.2rem;
+    margin-top: 0.7rem;
+  }
+
+  ul {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .progress-bar {
+    margin-top: 2rem;
+    height: 20px;
+  }
+
+  .progress-outline {
+    border-radius: 10px;
+    border-width: 1px;
+  }
+
+  .progress {
+    border-radius: 10px;
+  }
+
+  .progress-label {
+    font-size: 14px;
+  }
+}
 </style>

@@ -138,4 +138,40 @@ ul {
   margin: 1rem;
   color: #666;
 }
+@media screen and (max-width: 768px) {
+  .elements {
+    padding: 1rem;
+    max-width: 85%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icon {
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    font-size: 24px;
+  }
+
+  p {
+    margin-top: 1rem;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  ul {
+    margin: 1rem;
+    font-size: 16px;
+  }
+
+  li {
+    margin-top: 0.5rem;
+  }
+}
 </style>

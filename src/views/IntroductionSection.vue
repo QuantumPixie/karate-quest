@@ -151,4 +151,40 @@ const isSectionDisabled = (section: string): boolean => {
   width: 50px;
   height: 50px;
 }
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem; /* Decrease padding */
+    max-width: 100%; /* Adjust max width */
+  }
+
+  .card {
+    margin-bottom: 1rem; /* Reduce margin between cards */
+    display: flex;
+    flex-direction: column;
+  }
+  .complete-button[data-v-ec1c885c] {
+    align-self: center;
+    border: 2px solid #4ade80;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 2rem;
+  }
+
+  .button-container {
+    flex-direction: column-reverse; /* Stack button and lock icon vertically */
+    align-items: flex-end; /* Align to the right */
+  }
+  .p {
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  .lock-icon {
+    margin-left: 5rem;
+  }
+}
 </style>

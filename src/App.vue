@@ -46,9 +46,12 @@ button {
     flex: 1 1 0;
     padding: 4rem;
   }
+}
 
-  @media (max-width: 1024px) {
-    padding-left: 6rem;
+@media screen and (max-width: 768px) {
+  .app main {
+    flex: 1 1 0;
+    padding: 1rem;
   }
 }
 </style>

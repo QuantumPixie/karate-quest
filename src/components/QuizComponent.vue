@@ -55,6 +55,11 @@ const resetQuiz = (): void => {
   <main class="quiz">
     <div v-if="questions.length > 0">
       <h2>Quiz</h2>
+      <p>
+        Welcome, young warrior, to the KarateQuiz. Here, you will test your knowledge and wisdom.
+        <br />But heed my words: only by answering all questions correctly can you truly master this
+        section.
+      </p>
       <ol>
         <li v-for="(question, index) in questions" :key="index">
           <h4>{{ question.question }}</h4>
@@ -91,7 +96,10 @@ const resetQuiz = (): void => {
         </p>
       </div>
       <div v-else>
-        <p>Oops! Looks like you didn't answer all questions correctly. Please redo the quiz.</p>
+        <p>
+          Oops! Looks like you didn't answer all questions correctly. Please click on redo the quiz
+          and try again.
+        </p>
         <button class="redo-quiz-button" @click="resetQuiz">Redo Quiz</button>
       </div>
     </div>

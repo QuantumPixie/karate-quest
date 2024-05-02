@@ -6,46 +6,55 @@ import { useCompletedSectionsStore } from '@/stores/CompletedSectionsStore'
 const completedSectionsStore = useCompletedSectionsStore()
 const completedSections = completedSectionsStore.completedSections
 
-// Hardcoded total number of sections
-const totalSections: Ref<number> = ref(5)
-
 // Count the number of completed sections
 const completedSectionsCount: Ref<number> = ref(completedSections.length)
 
 // Calculate the progress percentage
 const progressPercentage: Ref<number> = ref<number>(
-  totalSections.value === 0 ? 0 : (completedSectionsCount.value / totalSections.value) * 100
+  completedSections.length === 0 ? 0 : (completedSectionsCount.value / 5) * 100
 )
 
 // Watch for changes in completedSections and recalculate progress
 watch(completedSections, (newCompletedSections: string[]) => {
   completedSectionsCount.value = newCompletedSections.length
   progressPercentage.value =
-    totalSections.value === 0 ? 0 : (completedSectionsCount.value / totalSections.value) * 100
+    completedSections.length === 0 ? 0 : (completedSectionsCount.value / 5) * 100
 })
 </script>
 
 <template>
   <main class="my-quest">
-    <div>
+    <div class="header">
       <h1>My KarateQuest</h1>
-      <h2>My Quest Progress</h2>
-      <div class="progress-container">
-        <div class="progress-bar">
-          <div class="progress-outline"></div>
-          <div class="progress" :style="{ width: progressPercentage + '%' }"></div>
-          <div class="progress-label">{{ Math.round(progressPercentage) }} %</div>
+      <img src="@/assets/ancient-scroll_4191666.png" alt="Scroll" class="icon" />
+    </div>
+
+    <h2>My Quest Progress</h2>
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress-outline"></div>
+        <div class="progress" :style="{ width: progressPercentage + '%' }"></div>
+        <div class="progress-label">{{ Math.round(progressPercentage) }} %</div>
+      </div>
+    </div>
+    <div class="completed-quests-card">
+      <div class="card">
+        <div class="card-header">
+          <h2>My Completed Quests</h2>
+        </div>
+        <div class="card-body">
+          <div v-if="completedSections.length > 0" class="fundamentals-card">
+            <h3>Fundamentals</h3>
+            <div class="fundamentals-sections">
+              <div v-for="(section, index) in completedSections" :key="index" class="section-card">
+                <img src="@/assets/star_3115215.png" alt="Section Icon" class="star-icon" />
+                <span class="section-name">{{ section }}</span>
+              </div>
+            </div>
+          </div>
+          <div v-else class="no-sections">No sections completed yet</div>
         </div>
       </div>
-      <h2>Completed Quests</h2>
-      <ul>
-        <li v-for="(section, index) in completedSections" :key="index">
-          <div class="completed-section">
-            <img src="@/assets/star_3115215.png" alt="Section Icon" class="star-icon" />
-            <span class="section-name">{{ section }}</span>
-          </div>
-        </li>
-      </ul>
     </div>
   </main>
 </template>
@@ -55,36 +64,66 @@ watch(completedSections, (newCompletedSections: string[]) => {
   padding: 4rem;
   max-width: 71%;
 }
+
 h2 {
   margin-top: 4rem;
+  margin-bottom: -1rem;
+  text-align: center;
 }
-.completed-section {
+
+.completed-quests-card {
+  margin-bottom: 2rem;
+}
+
+.card {
+  border: 2px solid var(--dark);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 4rem;
+  text-align: left;
+  background-color: #fff;
+}
+
+.card-header {
   display: flex;
-  align-items: flex-start;
-  margin: 1rem;
-  color: #666;
-  font-size: bolder;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: var(--dark);
 }
-li {
-  list-style: none;
+
+.card-header h2,
+.card-header h3 {
+  margin: 0;
+  color: white;
+}
+.icon {
+  width: 60px;
+  height: 60px;
+  margin-left: 1rem;
+}
+
+.no-sections {
+  margin: 2rem;
+  text-align: center;
 }
 
 .star-icon {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin-right: 0.5rem;
-  margin-top: 0.7rem;
+}
+.section-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .section-name {
-  font-size: 1.5rem;
-  margin-top: 1.1rem;
-}
-
-ul {
-  font-size: 1.1rem;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
 }
 
 .progress-bar {
@@ -102,7 +141,7 @@ ul {
   width: 100%;
   height: 100%;
   border-radius: 15px;
-  border: 2px solid black;
+  border: 2px solid #4ade80;
   box-sizing: border-box;
 }
 
@@ -120,6 +159,27 @@ ul {
   color: black;
   font-weight: bold;
 }
+
+.fundamentals-card {
+  background-color: var(--dark);
+  border: 12px solid white;
+  padding: 1rem;
+  border-radius: 23px;
+  margin-top: 1rem;
+}
+
+.fundamentals-card h3 {
+  font-size: 1.5em;
+  margin: 1rem;
+  color: white;
+  padding-left: 2.5rem;
+  text-align: center;
+}
+
+.fundamentals-sections {
+  padding: 1rem;
+}
+
 @media screen and (max-width: 768px) {
   .my-quest {
     padding: 1rem;
@@ -131,26 +191,15 @@ ul {
     font-size: 24px;
   }
 
-  .completed-section {
-    margin: 0.5rem;
-  }
-
   .star-icon {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     margin-right: 0.3rem;
-    margin-top: 0.5rem;
   }
 
   .section-name {
-    font-size: 1.2rem;
-    margin-top: 0.7rem;
-  }
-
-  ul {
     font-size: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-top: 0.3rem;
   }
 
   .progress-bar {

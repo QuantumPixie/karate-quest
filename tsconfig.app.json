@@ -1,6 +1,12 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "e2e/toggleSideBar.spec.ts",
+    "e2e/HomeView.spec.ts"
+  ],
   "allowJs": true,
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {

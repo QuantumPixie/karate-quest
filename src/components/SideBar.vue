@@ -10,7 +10,7 @@ const ToggleMenu = (): void => {
 <template>
   <aside :class="`${isExpanded && 'is-expanded'}`">
     <div class="logo">
-      <img src="../assets/vue.svg" alt="Vue Logo" />
+      <img src="@/assets/75_12508484.png" alt="Karate Quest Logo" width="35" height="35" />
     </div>
 
     <div class="menu-toggle-wrap">

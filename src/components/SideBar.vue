@@ -163,4 +163,7 @@ aside {
     }
   }
 }
+.menu .button.sublink {
+  margin-left: 4rem;
+}
 </style>

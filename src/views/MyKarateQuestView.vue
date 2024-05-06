@@ -219,7 +219,7 @@ h2 {
   .progress-label {
     font-size: 14px;
   }
-  .fundamentals-card h3[data-v-a1d78408] {
+  .fundamentals-card h3 {
     font-size: 1.5em;
     margin: 1rem;
     color: white;

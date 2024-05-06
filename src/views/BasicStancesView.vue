@@ -6,7 +6,10 @@ const videoUrl = computed(() => `https://www.youtube.com/embed/${videoId.value}`
 </script>
 <template>
   <main class="stances">
-    <h1>Karate Basic Stances</h1>
+    <div class="header">
+      <h1>Karate Basic Stances</h1>
+      <img src="@/assets/judo_3903767.png" alt="Stance" class="icon" />
+    </div>
     <p>
       Each stance in Karate serves a distinct purpose, contributing significantly to the
       practitioner's movement, defense, and offense strategies. These stances are not just mere

@@ -18,6 +18,15 @@ import SideBar from './components/SideBar.vue'
   --dark-alt: #334155;
   --light: #f1f5f9;
   --sidebar-width: 300px;
+  --white-belt-color: #ffffff;
+  --yellow-belt-color: #ffff00;
+  --orange-belt-color: #ffa500;
+  --green-belt-color: #008000;
+  --blue-belt-color: #0000ff;
+  --purple-belt-color: #800080;
+  --brown-belt-color: #a52a2a;
+  --red-belt-color: #ff0000;
+  --black-belt-color: #000000;
 }
 
 * {

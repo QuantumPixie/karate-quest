@@ -253,12 +253,12 @@ li {
 @media screen and (max-width: 768px) {
   .origins {
     padding: 1rem;
-    max-width: 85%; /* Adjusted max-width for mobile view */
+    max-width: 85%;
   }
   .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     margin-top: 2rem;
     margin-bottom: 4rem;
   }

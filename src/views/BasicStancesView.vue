@@ -146,6 +146,17 @@ const videoUrl = computed(() => `https://www.youtube.com/embed/${videoId.value}`
 </template>
 
 <style scoped>
+.stances {
+  padding: 4rem;
+  max-width: 71%;
+}
+.header {
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
 iframe {
   position: relative;
   margin-top: 2rem;
@@ -179,5 +190,71 @@ p {
   width: 250px;
   margin-left: 7rem;
   margin-top: 8rem;
+}
+@media screen and (max-width: 768px) {
+  .stances {
+    padding: 1rem;
+    max-width: 85%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .icon {
+    margin-bottom: 1rem;
+  }
+
+  .stance-image {
+    width: 70%;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+
+  .stance-container {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .stance-description {
+    text-align: justify;
+    margin-top: 1rem;
+  }
+  h2 {
+    text-align: center;
+    text-wrap: pretty;
+  }
+
+  p {
+    margin-top: 1rem;
+    text-align: left;
+  }
+
+  ol {
+    margin-top: 1rem;
+  }
+
+  li {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+  }
 }
 </style>

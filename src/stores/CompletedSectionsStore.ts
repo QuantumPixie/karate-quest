@@ -11,14 +11,12 @@ export const useCompletedSectionsStore = defineStore('completedSections', () => 
   // Initialize completedSections with data from local storage
   const storedData: string | null = localStorage.getItem('completedSections')
   const initialCompletedSections: string[] = storedData ? JSON.parse(storedData) : []
-  console.log('Initial completed sections:', initialCompletedSections)
 
   const completedSections: Ref<string[]> = ref(initialCompletedSections)
 
   // Watch for changes in completedSections and update local storage accordingly
-  watch(completedSections, (newValue) => {
+  watch(completedSections, () => {
     saveToLocalStorage()
-    console.log('Updated completed sections stored in local storage:', newValue)
   })
 
   function addCompletedSection(sectionName: string) {

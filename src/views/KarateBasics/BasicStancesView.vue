@@ -233,7 +233,7 @@ const videoUrl = computed(() => `https://www.youtube.com/embed/${videoId.value}`
       </div>
       <img src="@/assets/heisoku-dachi.webp" alt="Heisoku Dachi" class="stance-image" />
     </div>
-    <QuizComponent :questions="typedQuizData.stances" />
+    <QuizComponent quizName="karate-basic-stances" :questions="typedQuizData.stances" />
   </main>
 </template>
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useCompletedSectionsStore } from '@/stores/CompletedSectionsStore'
+import { useCompletedQuizzesStore } from '@/stores/CompletedQuizzesStore'
 
 interface Section {
   name: string
@@ -8,6 +9,7 @@ interface Section {
 }
 
 const completedSectionsStore = useCompletedSectionsStore()
+const completedQuizzesStore = useCompletedQuizzesStore()
 
 const requiredSections: Section[] = [
   {
@@ -40,8 +42,12 @@ const requiredSections: Section[] = [
 const isSectionCompleted = (section: string): boolean =>
   completedSectionsStore.completedSections.includes(section)
 
-const completeSection = (section: string): void =>
-  completedSectionsStore.addCompletedSection(section)
+const completeSection = (section: string): void => {
+  // Check if the quiz is completed and all answers are correct
+  if (completedQuizzesStore.completedQuizzes.indexOf(section) > -1) {
+    completedSectionsStore.addCompletedSection(section)
+  }
+}
 
 const isSectionDisabled = (section: string): boolean => {
   const index = requiredSections.findIndex(

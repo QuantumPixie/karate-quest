@@ -205,7 +205,7 @@ const videoUrl = computed<string>(() => `https://www.youtube.com/embed/${videoId
       </dl>
     </div>
 
-    <QuizComponent :questions="typedQuizData.origins" />
+    <QuizComponent quizName="Karate Origins and Principles" :questions="typedQuizData.origins" />
   </main>
 </template>
 

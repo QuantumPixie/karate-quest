@@ -101,7 +101,7 @@ const typedQuizData = quizData as QuizData
         fortitude, complementing the technical aspects learned in kihon and kata.
       </li>
     </ul>
-    <QuizComponent :questions="typedQuizData.elements" />
+    <QuizComponent quizName="Elements of Karate" :questions="typedQuizData.elements" />
   </main>
 </template>
 <style scoped>

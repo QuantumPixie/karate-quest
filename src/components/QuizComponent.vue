@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useCompletedQuizzesStore } from '@/stores/CompletedQuizzesStore'
 import { computed, defineProps, ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 
@@ -10,12 +11,18 @@ interface Question {
   selectedAnswer: string | null
 }
 
-const { questions } = defineProps({
+const { questions, quizName } = defineProps({
   questions: {
     type: Array as () => Array<Question>,
     required: true
+  },
+  quizName: {
+    type: String as () => string,
+    required: true
   }
 })
+
+const completedQuizzesStore = useCompletedQuizzesStore()
 
 const quizCompleted = ref<boolean>(false)
 const totalQuestions = computed<number>(() => questions.length)
@@ -34,13 +41,13 @@ const checkAnswers = (): void => {
   questions.forEach((question) => {
     if (question.selectedAnswer === question.correctAnswer) {
       score.value++
-    } else {
-      console.log('Incorrect!')
     }
   })
 
-  quizCompleted.value = true
-  // emit('quizCompleted', true)
+  if (score.value === totalQuestions.value) {
+    quizCompleted.value = true
+    completedQuizzesStore.addCompletedQuiz(quizName)
+  }
 }
 const resetQuiz = (): void => {
   score.value = 0

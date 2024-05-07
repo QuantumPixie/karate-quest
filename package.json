@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.1.1",
-    "@playwright/test": "^1.43.0",
+    "@playwright/test": "^1.44.0",
     "@rushstack/eslint-patch": "^1.8.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/jest": "^29.5.12",
@@ -35,7 +35,6 @@
     "eslint": "^8.57.0",
     "eslint-plugin-playwright": "^1.5.4",
     "eslint-plugin-vue": "^9.23.0",
-    "expect-playwright": "^0.8.0",
     "jsdom": "^24.0.0",
     "npm-run-all2": "^6.1.2",
     "prettier": "^3.2.5",

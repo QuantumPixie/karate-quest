@@ -1,31 +1,22 @@
 import { test, expect } from '@playwright/test'
-import { PlaywrightTestArgs } from '@playwright/test'
-import { toHaveAttribute } from 'playwright/test-expect/matchers' // Importing toHaveAttribute explicitly
 
-test('slideshow navigation', async ({ page }: PlaywrightTestArgs) => {
+test('slideshow navigation', async ({ page }) => {
   await page.goto('/')
 
-  // Get the initial image src
-  const initialSrc = await page.locator('.slide img').getAttribute('src')
+  const imageSlider = page.locator('.slideshow-container')
 
-  // Click the next slide button
-  await page.click('.next')
+  await expect(imageSlider.getByRole('img', { name: 'image 1' })).toBeVisible()
+  await expect(imageSlider.getByRole('img', { name: 'image 2' })).toBeHidden()
 
-  // Get the new image src after clicking next
-  const newSrc = await page.locator('.slide img').getAttribute('src')
+  // click the next slide button
+  await imageSlider.locator('.next').click()
 
-  // Assert that the new image src is different from the initial one
-  expect(newSrc).not.toEqual(initialSrc)
+  await expect(imageSlider.getByRole('img', { name: 'image 2' })).toBeVisible()
+  await expect(imageSlider.getByRole('img', { name: 'image 1' })).toBeHidden()
 
-  // Click the previous slide button
-  await page.click('.prev')
+  // click the previous slide button
+  await imageSlider.locator('.prev').click()
 
-  // Get the image src after clicking previous
-  const prevSrc = await page.locator('.slide img').getAttribute('src')
-
-  // Assert that the new image src is the same as the initial one
-  expect(prevSrc).toEqual(initialSrc)
-
-  // Example usage of toHaveAttribute matcher
-  await expect(page.locator('.slide img')).toHaveAttribute('src', newSrc) // Asserting the src attribute of the image
-}).extend(expect.with(toHaveAttribute))
+  await expect(imageSlider.getByRole('img', { name: 'image 1' })).toBeVisible()
+  await expect(imageSlider.getByRole('img', { name: 'image 2' })).toBeHidden()
+})

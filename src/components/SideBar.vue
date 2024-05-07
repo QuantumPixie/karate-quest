@@ -8,7 +8,7 @@ const ToggleMenu = (): void => {
 </script>
 
 <template>
-  <aside :class="`${isExpanded && 'is-expanded'}`">
+  <nav :class="`${isExpanded && 'is-expanded'}`">
     <div class="logo">
       <img src="@/assets/75_12508484.png" alt="Karate Quest Logo" width="35" height="35" />
     </div>
@@ -59,11 +59,11 @@ const ToggleMenu = (): void => {
         <span class="text">My KarateQuest</span>
       </router-link>
     </div>
-  </aside>
+  </nav>
 </template>
 
 <style lang="scss" scoped>
-aside {
+nav {
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
@@ -105,7 +105,7 @@ aside {
 
   h3,
   .button .text {
-    opacity: 0;
+    display: none;
     transition: 0.3s ease-out;
   }
 
@@ -164,7 +164,7 @@ aside {
     }
     h3,
     .button .text {
-      opacity: 1;
+      display: block;
     }
 
     .button {

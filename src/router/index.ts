@@ -1,16 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import BeltsView from '../views/BeltsView.vue'
-import WhiteBeltView from '../views/WhiteBeltView.vue'
-import YellowBeltView from '../views/YellowBeltView.vue'
-import OrangeBeltView from '../views/OrangeBeltView.vue'
-import KarateOrigins from '../views/KarateOrigins.vue'
-import KarateElements from '../views/KarateElements.vue'
+import BeltsView from '../views/Belts/BeltsGeneral.vue'
+import WhiteBeltView from '../views/Belts/WhiteBeltView.vue'
+import YellowBeltView from '../views/Belts/YellowBeltView.vue'
+import OrangeBeltView from '../views/Belts/OrangeBeltView.vue'
+import KarateOrigins from '../views/KarateBasics/KarateOrigins.vue'
+import KarateElements from '../views/KarateBasics/KarateElements.vue'
 import MyKarateQuestView from '../views/MyKarateQuestView.vue'
-import BasicBlocksView from '../views/BasicBlocksView.vue'
-import BasicPunchesView from '../views/BasicPunchesView.vue'
-import BasicStancesView from '../views/BasicStancesView.vue'
-import KarateFundamentalsView from '../views/KarateFundamentalsView.vue'
+import BasicBlocksView from '../views/KarateBasics/BasicBlocksView.vue'
+import BasicPunchesView from '../views/KarateBasics/BasicPunchesView.vue'
+import BasicStancesView from '../views/KarateBasics/BasicStancesView.vue'
+import KarateFundamentalsView from '../views/KarateBasics/KarateFundamentalsView.vue'
+import GreenBeltView from '@/views/Belts/GreenBeltView.vue'
+import BlueBeltView from '@/views/Belts/BlueBeltView.vue'
+import BrownBeltView from '@/views/Belts/BrownBeltView.vue'
+import BlackBeltView from '@/views/Belts/BlackBeltView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -63,6 +67,22 @@ const router = createRouter({
     {
       path: '/belts/orange',
       component: OrangeBeltView
+    },
+    {
+      path: '/belts/green',
+      component: GreenBeltView
+    },
+    {
+      path: '/belts/blue',
+      component: BlueBeltView
+    },
+    {
+      path: '/belts/brown',
+      component: BrownBeltView
+    },
+    {
+      path: '/belts/black',
+      component: BlackBeltView
     }
   ]
 })

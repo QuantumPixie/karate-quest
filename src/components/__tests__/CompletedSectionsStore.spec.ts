@@ -12,7 +12,7 @@ describe('useCompletedSectionsStore', () => {
 
     // Add a completed section
     store.addCompletedSection('section1')
-    store.addCompletedSection('section2') // Add section2
+    store.addCompletedSection('section2')
 
     // Check if section1 and section2 were added
     expect(store.completedSections).toContain('section1')

@@ -1,5 +1,21 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import QuizComponent from '@/components/QuizComponent.vue'
+import quizData from '@/quizData.json'
+
+interface QuizQuestion {
+  id: number
+  question: string
+  options: string[]
+  correctAnswer: string
+  selectedAnswer: string | null
+}
+
+interface QuizData {
+  stances: QuizQuestion[]
+}
+
+const typedQuizData = quizData as QuizData
 
 const videoId = ref<string>('QcRnV8VFYVo')
 const videoUrl = computed(() => `https://www.youtube.com/embed/${videoId.value}`)
@@ -142,6 +158,82 @@ const videoUrl = computed(() => `https://www.youtube.com/embed/${videoId.value}`
       </div>
       <img src="@/assets/kiba-dachi.webp" alt="Kiba Dachi" class="stance-image" />
     </div>
+    <div class="stance-container">
+      <div class="stance-description">
+        <h2>Fudo-dachi or Sochin Dachi (Immovable stance)</h2>
+        <p>
+          This stance is used in the Shotokan karate kata Sochin. So from the side, this karate
+          stance looks like half a front stance and half kiba dachi, with the body weight forward as
+          in zenkutsu dachi. This is one of the strongest and most phisically demanding shotokan
+          karate stances, hence the name immovable stance.
+        </p>
+        <ol>
+          <li>Stand in zenkutsu dachi (front stance), with the right leg in front.</li>
+          <li>
+            Now turn the right foot inside slightly (some Shotokan Dojo have the foot pointing
+            straight forward).
+          </li>
+          <li>Put the back left leg into a kiba dachi (horse riding) position.</li>
+        </ol>
+      </div>
+      <img src="@/assets/fudo-dachi.webp" alt="Fudo Dachi" class="stance-image" />
+    </div>
+    <div class="stance-container">
+      <div class="stance-description">
+        <h2>Heiko dachi (Parallel stance)</h2>
+        <p>
+          This stance is used after you bow (rei), in kihon, kumite and most kata. Heiko dachi is
+          the stance karate go into when making the Yoi (ready position). Shizen-tai or yoi dachi
+          also translate as “natural stance” (literally, ‘natural body,’ or ‘natural body stance’).
+          While in heiko dachi, the karateka is usually in the yoi (ready) position, arms slightly
+          in front of the thighs, fists clenched. The way the arms move into the yoi position varies
+          from Dojo to Dojo.
+        </p>
+        <ol>
+          <li>Weight distribution for Heiko Dachi is central.</li>
+          <li>Feet should be hip width to shoulder width apart.</li>
+          <li>Feet should be facing straight forwards.</li>
+          <li>Keep both feet flat but have a little more pressure on the big toes.</li>
+          <li>Keep your back straight</li>
+          <li>Keep the shoulders relaxed</li>
+        </ol>
+      </div>
+      <img src="@/assets/heiko-dachi1.webp" alt="Heiko Dachi" class="stance-image" />
+    </div>
+    <div class="stance-container">
+      <div class="stance-description">
+        <h2>Musubi-dachi (Heels together, feet turned out at 45 degrees)</h2>
+        <p>
+          This stance is used when you bow (rei). Many shotokan karate dojo bow in musubi dachi then
+          move into the Yoi (ready position).
+        </p>
+        <ol>
+          <li>Place the feet together, side by side.</li>
+          <li>Keeping the heels together, turn the toes out at roughly 45 degrees.</li>
+          <li>Keep your back straight.</li>
+          <li>Keep the shoulders relaxed.</li>
+        </ol>
+      </div>
+      <img src="@/assets/musubi-dachi.webp" alt="Musubi Dachi" class="stance-image" />
+    </div>
+    <div class="stance-container">
+      <div class="stance-description">
+        <h2>Heisoku-dachi (Feet Together Stance)</h2>
+        <p>
+          This stance is used by some Shotokan Dojo when you bow (rei). This is also the position of
+          many shotokan kata, tekki shodan, bassai dai, jion, jitte, Jiin, chinte and Unsu. Many
+          shotokan karate dojo bow in mosubi dachi or heisoku dachi, then move into the Yoi (ready
+          position).
+        </p>
+        <ol>
+          <li>Place the feet together, side by side.</li>
+          <li>Keep your back straight.</li>
+          <li>Keep the shoulders relaxed.</li>
+        </ol>
+      </div>
+      <img src="@/assets/heisoku-dachi.webp" alt="Heisoku Dachi" class="stance-image" />
+    </div>
+    <QuizComponent :questions="typedQuizData.stances" />
   </main>
 </template>
 
@@ -163,10 +255,12 @@ iframe {
   margin-bottom: 4rem;
 }
 ol {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 li {
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
+  color: #666;
+  font-size: 1.1rem;
 }
 .stances {
   padding: 4rem;

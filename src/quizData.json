@@ -102,5 +102,62 @@
       "correctAnswer": "It involves controlled and supervised combat between two practitioners",
       "selectedAnswer": null
     }
+  ],
+  "stances": [
+    {
+      "id": 11,
+      "question": "What is the weight distribution for the Zenkutsu-dachi (Front stance)?",
+      "options": [
+        "50% on front leg, 50% on back leg",
+        "30% on front leg, 70% on back leg",
+        "70% on front leg, 30% on back leg",
+        "90% on front leg, 10% on back leg"
+      ],
+      "correctAnswer": "70% on front leg, 30% on back leg",
+      "selectedAnswer": null
+    },
+    {
+      "id": 12,
+      "question": "Which stance is the most technically challenging and hardest to master in Shotokan karate?",
+      "options": [
+        "Kiba-dachi (Horse riding stance)",
+        "Heiko dachi (Parallel stance)",
+        "Fudo-dachi or Sochin Dachi (Immovable stance)",
+        "Kokustu-dachi (Back stance)"
+      ],
+      "correctAnswer": "Kokustu-dachi (Back stance)",
+      "selectedAnswer": null
+    },
+    {
+      "id": 13,
+      "question": "What is the stance used in Shotokan karate kata Sochin, combining half front stance and half horse riding stance?",
+      "options": [
+        "Kiba-dachi (Horse riding stance)",
+        "Heiko dachi (Parallel stance)",
+        "Fudo-dachi or Sochin Dachi (Immovable stance)",
+        "Zenkutsu-dachi (Front stance)"
+      ],
+      "correctAnswer": "Fudo-dachi or Sochin Dachi (Immovable stance)",
+      "selectedAnswer": null
+    },
+    {
+      "id": 14,
+      "question": "n which stance are the feet placed together, side by side, and the heels together with toes turned out at roughly 45 degrees?",
+      "options": ["Kokustu-dachi", "Musubi-dachi", "Heiko dachi ", "Heisoku-dachi"],
+      "correctAnswer": "Musubi-dachi",
+      "selectedAnswer": null
+    },
+    {
+      "id": 15,
+      "question": "What is the weight distribution for Heisoku-dachi (Feet Together Stance)",
+      "options": [
+        "50% on each leg",
+        "70% on one leg, 30% on the other leg",
+        "Weight is central",
+        "90% on one leg, 10% on the other leg"
+      ],
+      "correctAnswer": "Weight is central",
+      "selectedAnswer": null
+    }
   ]
 }

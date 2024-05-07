@@ -169,6 +169,7 @@ ul {
 
 .quiz {
   font-size: 1.2rem;
+  padding: 0;
 }
 .redo-quiz-button {
   margin-top: 20px;

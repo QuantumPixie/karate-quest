@@ -127,7 +127,7 @@ const isSectionDisabled = (section: string): boolean => {
   color: black;
 }
 .complete-button.disabled {
-  opacity: 0.5; /* Dim the button for disabled sections */
+  opacity: 0.5;
 }
 
 .card {
@@ -151,15 +151,15 @@ const isSectionDisabled = (section: string): boolean => {
   width: 50px;
   height: 50px;
 }
-/* Adjustments for smaller screens */
+
 @media screen and (max-width: 768px) {
   .container {
-    padding: 1rem; /* Decrease padding */
-    max-width: 100%; /* Adjust max width */
+    padding: 1rem;
+    max-width: 100%;
   }
 
   .card {
-    margin-bottom: 1rem; /* Reduce margin between cards */
+    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
   }
@@ -175,8 +175,8 @@ const isSectionDisabled = (section: string): boolean => {
   }
 
   .button-container {
-    flex-direction: column-reverse; /* Stack button and lock icon vertically */
-    align-items: flex-end; /* Align to the right */
+    flex-direction: column-reverse;
+    align-items: flex-end;
   }
   .p {
     text-align: left;

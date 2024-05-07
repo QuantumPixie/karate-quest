@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Ref } from 'vue'
+
 import image1 from '@/assets/leslie-jones-urBiLDuUhMU-unsplash.jpeg'
 import image2 from '@/assets/thao-lee-1IPV7Slrz7w-unsplash.jpeg'
 import image3 from '@/assets/thao-lee-dBAPRX9RdhQ-unsplash.jpeg'
@@ -42,7 +43,7 @@ function prevSlide(): void {
 <template>
   <main class="home-page">
     <div class="header">
-      <h1>Welcome to KarateQuest: Path to Mastery</h1>
+      <h1>Welcome to KarateQuest Dojo - Path to Mastery</h1>
       <img src="@/assets/75_12508649.png" alt="Karate Icon" class="icon" />
     </div>
     <p class="intro">
@@ -176,7 +177,7 @@ p {
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-/* Adjustments for smaller screens */
+
 @media screen and (max-width: 768px) {
   .home-page {
     padding: 1rem;
@@ -186,6 +187,9 @@ p {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+  h1 {
+    text-wrap: balance;
   }
 
   .icon {

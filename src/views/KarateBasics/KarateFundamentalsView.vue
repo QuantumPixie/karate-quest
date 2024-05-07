@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import IntroductionSection from './IntroductionSection.vue'
+import IntroductionSection from './/IntroductionSection.vue'
 </script>
 
 <template>

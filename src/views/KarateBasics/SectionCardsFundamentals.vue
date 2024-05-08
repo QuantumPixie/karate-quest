@@ -173,7 +173,9 @@ const isSectionDisabled = (section: string): boolean => {
     display: flex;
     flex-direction: column;
   }
-  .complete-button[data-v-ec1c885c] {
+  .complete-button {
+    margin-top: 2rem;
+    margin-left: 2rem;
     align-self: center;
     border: 2px solid #4ade80;
     border-radius: 8px;
@@ -195,6 +197,11 @@ const isSectionDisabled = (section: string): boolean => {
   }
   .lock-icon {
     margin-left: 5rem;
+    margin-top: 2rem;
   }
+}
+.complete-button.completed {
+  margin-top: 2rem;
+  margin-left: 3rem;
 }
 </style>

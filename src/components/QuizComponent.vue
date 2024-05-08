@@ -155,6 +155,7 @@ ul {
   margin: 1rem;
 }
 .submit-button {
+  margin-left: 10rem;
   margin-top: 2rem;
   border: 2px solid #4ade80;
   border-radius: 8px;

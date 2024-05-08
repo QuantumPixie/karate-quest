@@ -177,4 +177,7 @@ nav {
 .menu .button.sublink {
   margin-left: 4rem;
 }
+.logo {
+  margin-bottom: 2rem;
+}
 </style>

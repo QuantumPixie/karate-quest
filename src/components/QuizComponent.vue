@@ -11,6 +11,7 @@ interface Question {
   selectedAnswer: string | null
 }
 
+// props for the component
 const { questions, quizName } = defineProps({
   questions: {
     type: Array as () => Array<Question>,
@@ -24,12 +25,14 @@ const { questions, quizName } = defineProps({
 
 const completedQuizzesStore = useCompletedQuizzesStore()
 
+// reactive variables
 const quizCompleted = ref<boolean>(false)
 const totalQuestions = computed<number>(() => questions.length)
 const score = ref<number>(0)
 
 const selectedAnswer = ref({})
 
+// watch for changes in selectedAnswer to determine if the quiz is completed
 watch(selectedAnswer, () => {
   const answeredQuestions = questions.filter((question) => question.selectedAnswer)
   quizCompleted.value = answeredQuestions.length === totalQuestions.value
@@ -44,11 +47,13 @@ const checkAnswers = (): void => {
     }
   })
 
+  // if user scored full marks, mark quiz as completed and add to completed quizzes store
   if (score.value === totalQuestions.value) {
     quizCompleted.value = true
     completedQuizzesStore.addCompletedQuiz(quizName)
   }
 }
+
 const resetQuiz = (): void => {
   score.value = 0
   quizCompleted.value = false
@@ -99,7 +104,7 @@ const resetQuiz = (): void => {
           Congratulations! <br />
           You've answered all questions correctly. <br />
           Mark this section as complete and unlock your next challenge here:
-          <router-link class="button" to="/fundamentals">Go to Fundamentals Page</router-link>
+          <router-link class="button" to="/fundamentals">Go back to Fundamentals Page</router-link>
         </p>
       </div>
       <div v-else>
@@ -193,6 +198,3 @@ ul {
   }
 }
 </style>
-
-<!-- TODO:
-- disable submit button if not all questions are answered -->

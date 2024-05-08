@@ -46,6 +46,10 @@ const completeSection = (section: string): void => {
   // Check if the quiz is completed and all answers are correct
   if (completedQuizzesStore.completedQuizzes.indexOf(section) > -1) {
     completedSectionsStore.addCompletedSection(section)
+  } else {
+    alert(
+      'Please complete the quiz at the end of the section  successfully before marking this section as complete.'
+    )
   }
 }
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import IntroductionSection from './/SectionCardsFundamentals.vue'
+import FundamentalsSection from './/SectionCardsFundamentals.vue'
 </script>
 
 <template>
@@ -36,7 +36,7 @@ import IntroductionSection from './/SectionCardsFundamentals.vue'
       So, grab your gi, tie on your belt, and
       <b>prepare to unleash your inner karate kid!</b>
     </p>
-    <IntroductionSection />
+    <FundamentalsSection />
   </main>
 </template>
 
@@ -67,7 +67,6 @@ import IntroductionSection from './/SectionCardsFundamentals.vue'
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: inherit;
   display: flex;
-  /* justify-content: space-between; */
   margin-bottom: 2rem;
   padding: 20px;
   text-decoration: none;

@@ -57,10 +57,8 @@ const checkAnswers = (): void => {
 }
 
 const resetQuiz = (): void => {
-  console.log('Resetting quiz...')
   score.value = 0
   quizSubmitted.value = false
-  console.log('Quiz completed flag reset.')
   questions.forEach((question) => {
     question.selectedAnswer = null
   })

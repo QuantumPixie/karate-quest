@@ -26,7 +26,7 @@ const { questions, quizName } = defineProps({
 const completedQuizzesStore = useCompletedQuizzesStore()
 
 // reactive variables
-const quizCompleted = ref<boolean>(false)
+const quizSubmitted = ref<boolean>(false)
 const totalQuestions = computed<number>(() => questions.length)
 const score = ref<number>(0)
 
@@ -35,11 +35,11 @@ const selectedAnswer = ref({})
 // watch for changes in selectedAnswer to determine if the quiz is completed
 watch(selectedAnswer, () => {
   const answeredQuestions = questions.filter((question) => question.selectedAnswer)
-  quizCompleted.value = answeredQuestions.length === totalQuestions.value
+  quizSubmitted.value = answeredQuestions.length === totalQuestions.value
 })
 
 const checkAnswers = (): void => {
-  if (quizCompleted.value) return
+  if (quizSubmitted.value) return
 
   questions.forEach((question) => {
     if (question.selectedAnswer === question.correctAnswer) {
@@ -47,16 +47,20 @@ const checkAnswers = (): void => {
     }
   })
 
+  // the quiz can still be incorrect
+  quizSubmitted.value = true
+
   // if user scored full marks, mark quiz as completed and add to completed quizzes store
   if (score.value === totalQuestions.value) {
-    quizCompleted.value = true
     completedQuizzesStore.addCompletedQuiz(quizName)
   }
 }
 
 const resetQuiz = (): void => {
+  console.log('Resetting quiz...')
   score.value = 0
-  quizCompleted.value = false
+  quizSubmitted.value = false
+  console.log('Quiz completed flag reset.')
   questions.forEach((question) => {
     question.selectedAnswer = null
   })
@@ -94,11 +98,11 @@ const resetQuiz = (): void => {
 
       <button class="submit-button" @click="checkAnswers">Submit</button>
 
-      <div class="score" v-if="quizCompleted">
+      <div class="score" v-if="quizSubmitted">
         <p>Your Score: {{ score }}/{{ totalQuestions }}</p>
       </div>
     </div>
-    <div v-if="quizCompleted">
+    <div v-if="quizSubmitted">
       <div v-if="score === totalQuestions">
         <p>
           Congratulations! <br />

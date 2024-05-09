@@ -83,6 +83,10 @@ const router = createRouter({
     {
       path: '/belts/black',
       component: BlackBeltView
+    },
+    {
+      path: '/:catchAll(.*)',
+      redirect: '/'
     }
   ]
 })

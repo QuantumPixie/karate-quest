@@ -39,6 +39,7 @@ Track your progress and achievements with the MyKarateQuest dashboard. Monitor y
 2. **Install dependencies:**
    cd karate-quest
    npm install
+   npm install sass
 
 3. **Start the development server:**
    npm run dev

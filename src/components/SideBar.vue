@@ -39,21 +39,6 @@ const ToggleMenu = (): void => {
       <router-link class="button sublink" to="/belts/yellow">
         <span class="text">Yellow Belt</span>
       </router-link>
-      <router-link class="button sublink" to="/belts/orange">
-        <span class="text">Orange Belt</span>
-      </router-link>
-      <router-link class="button sublink" to="/belts/green">
-        <span class="text">Green Belt</span>
-      </router-link>
-      <router-link class="button sublink" to="/belts/blue">
-        <span class="text">Blue Belt</span>
-      </router-link>
-      <router-link class="button sublink" to="/belts/brown">
-        <span class="text">Brown Belt</span>
-      </router-link>
-      <router-link class="button sublink" to="/belts/black">
-        <span class="text">Black Belt</span>
-      </router-link>
       <router-link class="button" to="/quest">
         <span class="material-icons">spa</span>
         <span class="text">My KarateQuest</span>

@@ -8,7 +8,7 @@ const ToggleMenu = (): void => {
 </script>
 
 <template>
-  <nav :class="`${isExpanded && 'is-expanded'}`">
+  <nav :class="`${isExpanded && 'is-expanded'}`" class="sidebar">
     <div class="logo">
       <img src="@/assets/75_12508484.png" alt="Karate Quest Logo" width="35" height="35" />
     </div>
@@ -164,5 +164,10 @@ nav {
 }
 .logo {
   margin-bottom: 2rem;
+}
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
 }
 </style>
